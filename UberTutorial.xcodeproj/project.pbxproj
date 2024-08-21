@@ -14,6 +14,7 @@
 		BF6239CE2C75CB1A00F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239CD2C75CB1A00F661EF /* Base */; };
 		BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239DC2C75CC9800F661EF /* LoginController.swift */; };
 		BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239DE2C75E3C500F661EF /* Extensions.swift */; };
+		BF6239E12C7638FD00F661EF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239E02C7638FD00F661EF /* SignUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF6239CF2C75CB1A00F661EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6239DC2C75CC9800F661EF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BF6239DE2C75E3C500F661EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BF6239E02C7638FD00F661EF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
+				BF6239E02C7638FD00F661EF /* SignUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6239E12C7638FD00F661EF /* SignUpController.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
