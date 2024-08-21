@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C12C75CB1700F661EF /* AppDelegate.swift */; };
 		BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C32C75CB1700F661EF /* SceneDelegate.swift */; };
-		BF6239C62C75CB1700F661EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C52C75CB1700F661EF /* ViewController.swift */; };
 		BF6239C92C75CB1800F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239C82C75CB1800F661EF /* Base */; };
 		BF6239CB2C75CB1A00F661EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6239CA2C75CB1A00F661EF /* Assets.xcassets */; };
 		BF6239CE2C75CB1A00F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239CD2C75CB1A00F661EF /* Base */; };
+		BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239DC2C75CC9800F661EF /* LoginController.swift */; };
+		BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239DE2C75E3C500F661EF /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF6239BE2C75CB1700F661EF /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6239C12C75CB1700F661EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6239C32C75CB1700F661EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF6239C52C75CB1700F661EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF6239C82C75CB1800F661EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF6239CA2C75CB1A00F661EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF6239CD2C75CB1A00F661EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF6239CF2C75CB1A00F661EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF6239DC2C75CC9800F661EF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		BF6239DE2C75E3C500F661EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		BF6239C02C75CB1700F661EF /* UberTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				BF6239C12C75CB1700F661EF /* AppDelegate.swift */,
+				BF6239D92C75CB7400F661EF /* Model */,
+				BF6239D82C75CB7200F661EF /* View */,
+				BF6239D52C75CB6200F661EF /* Controller */,
+				BF6239DA2C75CBAA00F661EF /* Service */,
+				BF6239DB2C75CBB000F661EF /* Utils */,
 				BF6239C32C75CB1700F661EF /* SceneDelegate.swift */,
-				BF6239C52C75CB1700F661EF /* ViewController.swift */,
+				BF6239C12C75CB1700F661EF /* AppDelegate.swift */,
 				BF6239C72C75CB1800F661EF /* Main.storyboard */,
 				BF6239CA2C75CB1A00F661EF /* Assets.xcassets */,
 				BF6239CC2C75CB1A00F661EF /* LaunchScreen.storyboard */,
 				BF6239CF2C75CB1A00F661EF /* Info.plist */,
 			);
 			path = UberTutorial;
+			sourceTree = "<group>";
+		};
+		BF6239D52C75CB6200F661EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF6239D82C75CB7200F661EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF6239D92C75CB7400F661EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF6239DA2C75CBAA00F661EF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BF6239DB2C75CBB000F661EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF6239DE2C75E3C500F661EF /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6239C62C75CB1700F661EF /* ViewController.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
+				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
+				BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
