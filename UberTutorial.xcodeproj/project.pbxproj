@@ -21,6 +21,7 @@
 		BF6239EC2C78761E00F661EF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF6239EB2C78761E00F661EF /* FirebaseStorage */; };
 		BF6239EE2C78CBD700F661EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6239ED2C78CBD700F661EF /* GoogleService-Info.plist */; };
 		BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239EF2C7DB8C700F661EF /* HomeController.swift */; };
+		BF6239F22C7DF82300F661EF /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BF6239E22C778CD200F661EF /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		BF6239ED2C78CBD700F661EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF6239EF2C7DB8C700F661EF /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6239E22C778CD200F661EF /* AuthButton.swift */,
+				BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
+				BF6239F22C7DF82300F661EF /* LocationInputActivationView.swift in Sources */,
 				BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
