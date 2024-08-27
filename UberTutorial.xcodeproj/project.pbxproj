@@ -16,10 +16,11 @@
 		BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239DE2C75E3C500F661EF /* Extensions.swift */; };
 		BF6239E12C7638FD00F661EF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239E02C7638FD00F661EF /* SignUpController.swift */; };
 		BF6239E32C778CD200F661EF /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239E22C778CD200F661EF /* AuthButton.swift */; };
-		BF6239E52C77A66B00F661EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6239E42C77A66B00F661EF /* GoogleService-Info.plist */; };
 		BF6239E82C78761E00F661EF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF6239E72C78761E00F661EF /* FirebaseAuth */; };
 		BF6239EA2C78761E00F661EF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF6239E92C78761E00F661EF /* FirebaseDatabase */; };
 		BF6239EC2C78761E00F661EF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF6239EB2C78761E00F661EF /* FirebaseStorage */; };
+		BF6239EE2C78CBD700F661EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6239ED2C78CBD700F661EF /* GoogleService-Info.plist */; };
+		BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239EF2C7DB8C700F661EF /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,8 @@
 		BF6239DE2C75E3C500F661EF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BF6239E02C7638FD00F661EF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BF6239E22C778CD200F661EF /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		BF6239E42C77A66B00F661EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BF6239ED2C78CBD700F661EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BF6239EF2C7DB8C700F661EF /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 				BF6239CA2C75CB1A00F661EF /* Assets.xcassets */,
 				BF6239CC2C75CB1A00F661EF /* LaunchScreen.storyboard */,
 				BF6239CF2C75CB1A00F661EF /* Info.plist */,
-				BF6239E42C77A66B00F661EF /* GoogleService-Info.plist */,
+				BF6239ED2C78CBD700F661EF /* GoogleService-Info.plist */,
 			);
 			path = UberTutorial;
 			sourceTree = "<group>";
@@ -91,6 +93,7 @@
 			children = (
 				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
 				BF6239E02C7638FD00F661EF /* SignUpController.swift */,
+				BF6239EF2C7DB8C700F661EF /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6239CB2C75CB1A00F661EF /* Assets.xcassets in Resources */,
-				BF6239E52C77A66B00F661EF /* GoogleService-Info.plist in Resources */,
+				BF6239EE2C78CBD700F661EF /* GoogleService-Info.plist in Resources */,
 				BF6239CE2C75CB1A00F661EF /* Base in Resources */,
 				BF6239C92C75CB1800F661EF /* Base in Resources */,
 			);
@@ -207,6 +210,7 @@
 			files = (
 				BF6239E12C7638FD00F661EF /* SignUpController.swift in Sources */,
 				BF6239E32C778CD200F661EF /* AuthButton.swift in Sources */,
+				BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,

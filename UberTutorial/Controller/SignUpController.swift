@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpController: UIViewController {
     
@@ -67,6 +69,7 @@ class SignUpController: UIViewController {
         let button = AuthButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -88,6 +91,36 @@ class SignUpController: UIViewController {
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordtextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                debugPrint("Failed to register user with error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let uid = result?.user.uid else { return }
+            
+            let values = ["email" : email,
+                         "fullName" : fullName,
+                         "accountType" : accountTypeIndex]
+            
+            Database.database().reference().child("users").child(uid).updateChildValues(values) { error, reference in
+                guard let controller = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                      let window = controller.windows.first(where: { $0.isKeyWindow }),
+                      let controller = window.rootViewController as? HomeController else {
+                    return
+                }
+                controller.configureUI()
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     //MARK: - Lifecycle
