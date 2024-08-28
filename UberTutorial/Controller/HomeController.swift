@@ -27,11 +27,15 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         checkIfUserIsLoggedIn()
-//                signOut()
         enableLocationServices()
+        fetchUserData()
     }
     
     //MARK: - API
+    
+    func fetchUserData() {
+        Service.shared.fetchUserData()
+    }
     
     func checkIfUserIsLoggedIn() {
         
