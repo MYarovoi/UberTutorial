@@ -23,6 +23,7 @@
 		BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239EF2C7DB8C700F661EF /* HomeController.swift */; };
 		BF6239F22C7DF82300F661EF /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */; };
 		BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F32C7E0A2500F661EF /* LocationInputView.swift */; };
+		BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F52C7F08F200F661EF /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		BF6239EF2C7DB8C700F661EF /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		BF6239F32C7E0A2500F661EF /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		BF6239F52C7F08F200F661EF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6239E22C778CD200F661EF /* AuthButton.swift */,
+				BF6239F52C7F08F200F661EF /* LocationCell.swift */,
 				BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */,
 				BF6239F32C7E0A2500F661EF /* LocationInputView.swift */,
 			);
@@ -220,6 +223,7 @@
 				BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
+				BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
 				BF6239F22C7DF82300F661EF /* LocationInputActivationView.swift in Sources */,
 				BF6239DF2C75E3C500F661EF /* Extensions.swift in Sources */,
