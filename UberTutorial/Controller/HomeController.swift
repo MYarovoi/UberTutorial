@@ -21,7 +21,9 @@ class HomeController: UIViewController {
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     private final let locationInputViewHeight: CGFloat = 200
-    
+    private var user: User? {
+        didSet {locationInputView.user = user}
+    }
     //MARK: - Lifycycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,9 @@ class HomeController: UIViewController {
     //MARK: - API
     
     func fetchUserData() {
-        Service.shared.fetchUserData()
+        Service.shared.fetchUserData { user in
+            self.user = user
+        }
     }
     
     func checkIfUserIsLoggedIn() {
