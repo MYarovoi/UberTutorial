@@ -43,7 +43,20 @@ class HomeController: UIViewController {
             guard let coordinate = driver.location?.coordinate else { return }
             let annotation = DriverAnnotation(coordinate: coordinate, uid: driver.uid)
             
-            self.mapView.addAnnotation(annotation)
+            var drivarIsVisible: Bool {
+                return self.mapView.annotations.contains { annotation in
+                    guard let driverAnno = annotation as? DriverAnnotation else { return false }
+                    if driverAnno.uid == driver.uid {
+                        driverAnno.updateAnnotationPosition(withCoordinate: coordinate)
+                        return true
+                    }
+                    return false
+                }
+            }
+            
+            if !drivarIsVisible {
+                self.mapView.addAnnotation(annotation)
+            }
         }
     }
     
