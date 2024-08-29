@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0A156E2C7F94FC00B77F4F /* GeoFire in Frameworks */ = {isa = PBXBuildFile; productRef = BF0A156D2C7F94FC00B77F4F /* GeoFire */; };
+		BF0A15702C7F94FC00B77F4F /* GeoFireUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF0A156F2C7F94FC00B77F4F /* GeoFireUtils */; };
+		BF0A15722C805CF800B77F4F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15712C805CF800B77F4F /* LocationHandler.swift */; };
 		BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C12C75CB1700F661EF /* AppDelegate.swift */; };
 		BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C32C75CB1700F661EF /* SceneDelegate.swift */; };
 		BF6239C92C75CB1800F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239C82C75CB1800F661EF /* Base */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0A15712C805CF800B77F4F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		BF6239BE2C75CB1700F661EF /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6239C12C75CB1700F661EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6239C32C75CB1700F661EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +58,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0A156E2C7F94FC00B77F4F /* GeoFire in Frameworks */,
 				BF6239EA2C78761E00F661EF /* FirebaseDatabase in Frameworks */,
 				BF6239E82C78761E00F661EF /* FirebaseAuth in Frameworks */,
 				BF6239EC2C78761E00F661EF /* FirebaseStorage in Frameworks */,
+				BF0A15702C7F94FC00B77F4F /* GeoFireUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6239DE2C75E3C500F661EF /* Extensions.swift */,
+				BF0A15712C805CF800B77F4F /* LocationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +170,8 @@
 				BF6239E72C78761E00F661EF /* FirebaseAuth */,
 				BF6239E92C78761E00F661EF /* FirebaseDatabase */,
 				BF6239EB2C78761E00F661EF /* FirebaseStorage */,
+				BF0A156D2C7F94FC00B77F4F /* GeoFire */,
+				BF0A156F2C7F94FC00B77F4F /* GeoFireUtils */,
 			);
 			productName = UberTutorial;
 			productReference = BF6239BE2C75CB1700F661EF /* UberTutorial.app */;
@@ -194,6 +203,7 @@
 			mainGroup = BF6239B52C75CB1700F661EF;
 			packageReferences = (
 				BF6239E62C78761E00F661EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BF0A156C2C7F94FC00B77F4F /* XCRemoteSwiftPackageReference "geofire-objc" */,
 			);
 			productRefGroup = BF6239BF2C75CB1700F661EF /* Products */;
 			projectDirPath = "";
@@ -230,6 +240,7 @@
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */,
+				BF0A15722C805CF800B77F4F /* LocationHandler.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
 				BF6239FA2C7F26A200F661EF /* User.swift in Sources */,
 				BF6239F82C7F1D6500F661EF /* Service.swift in Sources */,
@@ -467,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF0A156C2C7F94FC00B77F4F /* XCRemoteSwiftPackageReference "geofire-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/geofire-objc";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BF6239E62C78761E00F661EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -478,6 +497,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF0A156D2C7F94FC00B77F4F /* GeoFire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF0A156C2C7F94FC00B77F4F /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			productName = GeoFire;
+		};
+		BF0A156F2C7F94FC00B77F4F /* GeoFireUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF0A156C2C7F94FC00B77F4F /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			productName = GeoFireUtils;
+		};
 		BF6239E72C78761E00F661EF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF6239E62C78761E00F661EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
