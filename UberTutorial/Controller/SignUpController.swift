@@ -137,7 +137,7 @@ class SignUpController: UIViewController {
     //MARK: - Helper Functions
     
     func uploadUserDataAndShowHomeController(uid: String, values: [String : Any]) {
-        REF_USERS.child("users").child(uid).updateChildValues(values) { error, reference in
+        REF_USERS.child(uid).updateChildValues(values) { error, reference in
             guard let controller = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let window = controller.windows.first(where: { $0.isKeyWindow }),
                   let controller = window.rootViewController as? HomeController else {
