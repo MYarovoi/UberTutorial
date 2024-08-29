@@ -13,10 +13,12 @@ struct User {
     let email: String
     let accountType: Int
     var location: CLLocation?
+    let uid: String
     
-    init(dictionary: [String : Any]) {
+    init(uid: String, dictionary: [String : Any]) {
         self.fullname = dictionary["fullName"] as? String ?? ""
         self.email = dictionary["email"] as? String ?? ""
         self.accountType = dictionary["accountType"] as? Int ?? 0
+        self.uid = uid
     }
 }

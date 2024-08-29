@@ -10,6 +10,7 @@
 		BF0A156E2C7F94FC00B77F4F /* GeoFire in Frameworks */ = {isa = PBXBuildFile; productRef = BF0A156D2C7F94FC00B77F4F /* GeoFire */; };
 		BF0A15702C7F94FC00B77F4F /* GeoFireUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF0A156F2C7F94FC00B77F4F /* GeoFireUtils */; };
 		BF0A15722C805CF800B77F4F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15712C805CF800B77F4F /* LocationHandler.swift */; };
+		BF0A15742C8098CD00B77F4F /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15732C8098CD00B77F4F /* DriverAnnotation.swift */; };
 		BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C12C75CB1700F661EF /* AppDelegate.swift */; };
 		BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C32C75CB1700F661EF /* SceneDelegate.swift */; };
 		BF6239C92C75CB1800F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239C82C75CB1800F661EF /* Base */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		BF0A15712C805CF800B77F4F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		BF0A15732C8098CD00B77F4F /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		BF6239BE2C75CB1700F661EF /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6239C12C75CB1700F661EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6239C32C75CB1700F661EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6239F92C7F26A200F661EF /* User.swift */,
+				BF0A15732C8098CD00B77F4F /* DriverAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				BF6239E32C778CD200F661EF /* AuthButton.swift in Sources */,
 				BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */,
 				BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */,
+				BF0A15742C8098CD00B77F4F /* DriverAnnotation.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
 				BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */,
