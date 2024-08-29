@@ -89,7 +89,7 @@ class LoginController: UIViewController {
                   let controller = window.rootViewController as? HomeController else {
                 return
             }
-            controller.configureUI()
+            controller.configure()
             self.dismiss(animated: true)
         }
     }
