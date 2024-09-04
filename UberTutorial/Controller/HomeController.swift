@@ -38,12 +38,21 @@ class HomeController: UIViewController {
     private var route: MKRoute?
     
     private var user: User? {
-        didSet {locationInputView.user = user
+        didSet {
+            locationInputView.user = user
             
             if user?.accountType == .passenger {
                 fetchDrivers()
                 configureLocationInputActivationView()
+            } else {
+                observeTrips()
             }
+        }
+    }
+    
+    private var trip: Trip? {
+        didSet {
+            self.trip = trip
         }
     }
     
@@ -102,6 +111,12 @@ class HomeController: UIViewController {
             if !drivarIsVisible {
                 self.mapView.addAnnotation(annotation)
             }
+        }
+    }
+    
+    func observeTrips() {
+        Service.shared.observeTrips { trip in
+            
         }
     }
     
