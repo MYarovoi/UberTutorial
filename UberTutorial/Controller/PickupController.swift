@@ -8,12 +8,17 @@
 import UIKit
 import MapKit
 
+protocol PickupControllerDelegate: AnyObject {
+    func didAcceptTrip(_ trip: Trip)
+}
+
 class PickupController: UIViewController {
     
     //MARK: - Properties
     
     private let mapView = MKMapView()
     let trip: Trip
+    weak var delegate: PickupControllerDelegate?
     
     private let cancelButton: UIButton = {
         let button = UIButton(type: .system)
@@ -35,7 +40,7 @@ class PickupController: UIViewController {
         button.addTarget(self, action: #selector(handleAcceptTrip), for: .touchUpInside)
         button.backgroundColor = .white
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("ACCEPT TRIP", for: .normal)
         return button
     }()
@@ -54,6 +59,7 @@ class PickupController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureMapView()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -63,7 +69,9 @@ class PickupController: UIViewController {
     //MARK: - Selectors
     
     @objc func handleAcceptTrip() {
-        
+        Service.shared.accepTrip(trip: trip) { error, ref in
+            self.delegate?.didAcceptTrip(self.trip)
+        }
     }
     
     @objc func handleDismissal() {
@@ -73,6 +81,16 @@ class PickupController: UIViewController {
     //MARK: - API
     
     //MARK: - Helper Functions
+    
+    func configureMapView() {
+        let region = MKCoordinateRegion(center: trip.pickupCoordinates, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapView.setRegion(region, animated: false)
+        
+        let anno = MKPointAnnotation()
+        anno.coordinate = trip.pickupCoordinates
+        mapView.addAnnotation(anno)
+        mapView.selectAnnotation(anno, animated: true)
+    }
     
     func configureUI() {
         view.backgroundColor = .backgroundColor
