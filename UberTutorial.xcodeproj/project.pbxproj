@@ -13,6 +13,7 @@
 		BF0A15742C8098CD00B77F4F /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15732C8098CD00B77F4F /* DriverAnnotation.swift */; };
 		BF0A15762C86F16500B77F4F /* RideAnctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15752C86F16500B77F4F /* RideAnctionView.swift */; };
 		BF0A15782C88861400B77F4F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15772C88861400B77F4F /* Trip.swift */; };
+		BF0A157A2C88A6DC00B77F4F /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15792C88A6DC00B77F4F /* PickupController.swift */; };
 		BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C12C75CB1700F661EF /* AppDelegate.swift */; };
 		BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C32C75CB1700F661EF /* SceneDelegate.swift */; };
 		BF6239C92C75CB1800F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239C82C75CB1800F661EF /* Base */; };
@@ -39,6 +40,7 @@
 		BF0A15732C8098CD00B77F4F /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		BF0A15752C86F16500B77F4F /* RideAnctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAnctionView.swift; sourceTree = "<group>"; };
 		BF0A15772C88861400B77F4F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		BF0A15792C88A6DC00B77F4F /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
 		BF6239BE2C75CB1700F661EF /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6239C12C75CB1700F661EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6239C32C75CB1700F661EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
 				BF6239E02C7638FD00F661EF /* SignUpController.swift */,
 				BF6239EF2C7DB8C700F661EF /* HomeController.swift */,
+				BF0A15792C88A6DC00B77F4F /* PickupController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */,
 				BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */,
 				BF0A15782C88861400B77F4F /* Trip.swift in Sources */,
+				BF0A157A2C88A6DC00B77F4F /* PickupController.swift in Sources */,
 				BF0A15742C8098CD00B77F4F /* DriverAnnotation.swift in Sources */,
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF0A15762C86F16500B77F4F /* RideAnctionView.swift in Sources */,
