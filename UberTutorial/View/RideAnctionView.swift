@@ -12,6 +12,46 @@ protocol RideAnctionViewDelegate: AnyObject {
     func uploadTrip(_ view: RideAnctionView)
 }
 
+enum RideActionViewConfiguration {
+    case requestRide
+    case tripAccepted
+    case pickupPassenger
+    case tripInProgress
+    case endTrip
+    
+    init() {
+        self = .requestRide
+    }
+}
+
+enum ButtonAction: CustomStringConvertible {
+    case requestRide
+    case cancel
+    case getDirections
+    case pickup
+    case dropOff
+    
+    var description: String {
+        switch self {
+            
+        case .requestRide:
+            return "CONFORM UBERX"
+        case .cancel:
+            return "CANCEL RIDE"
+        case .getDirections:
+            return "GET DIRECTIONS"
+        case .pickup:
+            return "PICKUP PASSENGER"
+        case .dropOff:
+            return "DROP OFF PASSENGER"
+        }
+    }
+    
+    init() {
+        self = .requestRide
+    }
+}
+
 class RideAnctionView: UIView {
 
     //MARK: - Properties
@@ -23,13 +63,15 @@ class RideAnctionView: UIView {
         }
     }
     
+    var config = RideActionViewConfiguration()
+    var buttonAction = ButtonAction()
     weak var delegate: RideAnctionViewDelegate?
+    var user: User?
     
     private let titleLabel: UILabel = {
        let label = UILabel()
         label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
-        label.text = "Some name"
         return label
     }()
     
@@ -38,7 +80,6 @@ class RideAnctionView: UIView {
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
-        label.text = "Some address"
         return label
     }()
     
@@ -120,5 +161,33 @@ class RideAnctionView: UIView {
     
     @objc func actionButtonPressed() {
         delegate?.uploadTrip(self)
+    }
+    
+    //MARK: - Helper Functions
+    
+    func configureUI(withConfig config: RideActionViewConfiguration) {
+        switch config {
+        case .requestRide:
+            buttonAction = .requestRide
+            actionButton.setTitle(buttonAction.description, for: .normal)
+        case .tripAccepted:
+            guard let user = user else { return }
+            
+            if user.accountType == .passenger {
+                titleLabel.text = "En Route To Passenger"
+                buttonAction = .getDirections
+                actionButton.setTitle(buttonAction.description, for: .normal)
+            } else {
+                buttonAction = .cancel
+                actionButton.setTitle(buttonAction.description, for: .normal)
+                titleLabel.text = "Driver En Route"
+            }
+        case .pickupPassenger:
+            break
+        case .tripInProgress:
+            break
+        case .endTrip:
+            break
+        }
     }
 }
