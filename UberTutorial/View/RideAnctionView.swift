@@ -10,6 +10,7 @@ import MapKit
 
 protocol RideAnctionViewDelegate: AnyObject {
     func uploadTrip(_ view: RideAnctionView)
+    func cancelTrip()
 }
 
 enum RideActionViewConfiguration {
@@ -167,13 +168,13 @@ class RideAnctionView: UIView {
         case .requestRide:
             delegate?.uploadTrip(self)
         case .cancel:
-            <#code#>
+            delegate?.cancelTrip()
         case .getDirections:
-            <#code#>
+            print("")
         case .pickup:
-            <#code#>
+            print("")
         case .dropOff:
-            <#code#>
+            print("")
         }
     }
         
