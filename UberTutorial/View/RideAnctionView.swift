@@ -12,6 +12,7 @@ protocol RideAnctionViewDelegate: AnyObject {
     func uploadTrip(_ view: RideAnctionView)
     func cancelTrip()
     func pickupPassenger()
+    func dropOffPassenger()
 }
 
 enum RideActionViewConfiguration {
@@ -181,7 +182,7 @@ class RideAnctionView: UIView {
         case .pickup:
             delegate?.pickupPassenger()
         case .dropOff:
-            print("")
+            delegate?.dropOffPassenger()
         }
     }
         
@@ -242,6 +243,8 @@ class RideAnctionView: UIView {
                    buttonAction = .dropOff
                    actionButton.setTitle(buttonAction.description, for: .normal)
                }
+               
+               titleLabel.text = "Arrived at Destination"
            }
         }
     }
