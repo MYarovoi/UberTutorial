@@ -11,11 +11,13 @@ import MapKit
 protocol RideAnctionViewDelegate: AnyObject {
     func uploadTrip(_ view: RideAnctionView)
     func cancelTrip()
+    func pickupPassenger()
 }
 
 enum RideActionViewConfiguration {
     case requestRide
     case tripAccepted
+    case driverArrived
     case pickupPassenger
     case tripInProgress
     case endTrip
@@ -64,10 +66,15 @@ class RideAnctionView: UIView {
         }
     }
     
-    var config = RideActionViewConfiguration()
     var buttonAction = ButtonAction()
     weak var delegate: RideAnctionViewDelegate?
     var user: User?
+    
+    var config = RideActionViewConfiguration() {
+        didSet {
+            configureUI(withConfig: config)
+        }
+    }
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -172,7 +179,7 @@ class RideAnctionView: UIView {
         case .getDirections:
             print("")
         case .pickup:
-            print("")
+            delegate?.pickupPassenger()
         case .dropOff:
             print("")
         }
@@ -180,53 +187,61 @@ class RideAnctionView: UIView {
         
         //MARK: - Helper Functions
         
-        func configureUI(withConfig config: RideActionViewConfiguration) {
-            switch config {
-            case .requestRide:
-                buttonAction = .requestRide
-                actionButton.setTitle(buttonAction.description, for: .normal)
-            case .tripAccepted:
-                guard let user = user else { return }
-                
-                if user.accountType == .passenger {
-                    titleLabel.text = "En Route To Passenger"
-                    buttonAction = .getDirections
-                    actionButton.setTitle(buttonAction.description, for: .normal)
-                } else {
-                    buttonAction = .cancel
-                    actionButton.setTitle(buttonAction.description, for: .normal)
-                    titleLabel.text = "Driver En Route"
-                }
-                
-                infoViewLabel.text = String(user.fullname.first ?? "X")
-                uberInfolabel.text = user.fullname
-                
-            case .pickupPassenger:
-                titleLabel.text = "Arrived At Passenger Location"
-                buttonAction = .pickup
-                actionButton.setTitle(buttonAction.description, for: .normal)
-            case .tripInProgress:
-                guard let user = user else { return }
-                
-                if user.accountType == .driver {
-                    actionButton.setTitle("TRIP IN PROGRESS", for: .normal)
-                    actionButton.isEnabled = false
-                } else {
-                    buttonAction = .getDirections
-                    actionButton.setTitle(buttonAction.description, for: .normal)
-                }
-                
-                titleLabel.text = "En Route To Destination"
-            case .endTrip:
-                guard let user = user else { return }
-                
-                if user.accountType == .driver {
-                    actionButton.setTitle("ARRIVED AT DESTINATION", for: .normal)
-                    actionButton.isEnabled = false
-                } else {
-                    buttonAction = .dropOff
-                    actionButton.setTitle(buttonAction.description, for: .normal)
-                }
-            }
+       private func configureUI(withConfig config: RideActionViewConfiguration) {
+           switch config {
+           case .requestRide:
+               buttonAction = .requestRide
+               actionButton.setTitle(buttonAction.description, for: .normal)
+           case .tripAccepted:
+               guard let user = user else { return }
+               
+               if user.accountType == .passenger {
+                   titleLabel.text = "En Route To Passenger"
+                   buttonAction = .getDirections
+                   actionButton.setTitle(buttonAction.description, for: .normal)
+               } else {
+                   buttonAction = .cancel
+                   actionButton.setTitle(buttonAction.description, for: .normal)
+                   titleLabel.text = "Driver En Route"
+               }
+               
+               infoViewLabel.text = String(user.fullname.first ?? "X")
+               uberInfolabel.text = user.fullname
+               
+           case .driverArrived:
+               guard let user = user else { return }
+               
+               if user.accountType == .driver {
+                   titleLabel.text = "Driver Has Arrived"
+                   addressLabel.text = "Please meet driver at pickup location"
+               }
+               
+           case .pickupPassenger:
+               titleLabel.text = "Arrived At Passenger Location"
+               buttonAction = .pickup
+               actionButton.setTitle(buttonAction.description, for: .normal)
+           case .tripInProgress:
+               guard let user = user else { return }
+               
+               if user.accountType == .driver {
+                   actionButton.setTitle("TRIP IN PROGRESS", for: .normal)
+                   actionButton.isEnabled = false
+               } else {
+                   buttonAction = .getDirections
+                   actionButton.setTitle(buttonAction.description, for: .normal)
+               }
+               
+               titleLabel.text = "En Route To Destination"
+           case .endTrip:
+               guard let user = user else { return }
+               
+               if user.accountType == .driver {
+                   actionButton.setTitle("ARRIVED AT DESTINATION", for: .normal)
+                   actionButton.isEnabled = false
+               } else {
+                   buttonAction = .dropOff
+                   actionButton.setTitle(buttonAction.description, for: .normal)
+               }
+           }
         }
     }
