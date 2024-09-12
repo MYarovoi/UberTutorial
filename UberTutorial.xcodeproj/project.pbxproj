@@ -14,6 +14,9 @@
 		BF0A15762C86F16500B77F4F /* RideAnctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15752C86F16500B77F4F /* RideAnctionView.swift */; };
 		BF0A15782C88861400B77F4F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15772C88861400B77F4F /* Trip.swift */; };
 		BF0A157A2C88A6DC00B77F4F /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15792C88A6DC00B77F4F /* PickupController.swift */; };
+		BF0A157E2C92FEA600B77F4F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A157D2C92FEA600B77F4F /* MenuController.swift */; };
+		BF0A15802C92FEC200B77F4F /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A157F2C92FEC200B77F4F /* ContainerController.swift */; };
+		BF0A15822C9311EE00B77F4F /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A15812C9311EE00B77F4F /* MenuHeader.swift */; };
 		BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C12C75CB1700F661EF /* AppDelegate.swift */; };
 		BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239C32C75CB1700F661EF /* SceneDelegate.swift */; };
 		BF6239C92C75CB1800F661EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF6239C82C75CB1800F661EF /* Base */; };
@@ -41,6 +44,9 @@
 		BF0A15752C86F16500B77F4F /* RideAnctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAnctionView.swift; sourceTree = "<group>"; };
 		BF0A15772C88861400B77F4F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		BF0A15792C88A6DC00B77F4F /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
+		BF0A157D2C92FEA600B77F4F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		BF0A157F2C92FEC200B77F4F /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		BF0A15812C9311EE00B77F4F /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		BF6239BE2C75CB1700F661EF /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6239C12C75CB1700F661EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6239C32C75CB1700F661EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF0A157B2C92FE5700B77F4F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
+				BF6239E02C7638FD00F661EF /* SignUpController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BF0A157C2C92FE7500B77F4F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A157D2C92FEA600B77F4F /* MenuController.swift */,
+				BF0A157F2C92FEC200B77F4F /* ContainerController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		BF6239B52C75CB1700F661EF = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +139,8 @@
 		BF6239D52C75CB6200F661EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BF6239DC2C75CC9800F661EF /* LoginController.swift */,
-				BF6239E02C7638FD00F661EF /* SignUpController.swift */,
+				BF0A157C2C92FE7500B77F4F /* SideMenu */,
+				BF0A157B2C92FE5700B77F4F /* Authentication */,
 				BF6239EF2C7DB8C700F661EF /* HomeController.swift */,
 				BF0A15792C88A6DC00B77F4F /* PickupController.swift */,
 			);
@@ -131,6 +155,7 @@
 				BF6239F12C7DF82300F661EF /* LocationInputActivationView.swift */,
 				BF6239F32C7E0A2500F661EF /* LocationInputView.swift */,
 				BF0A15752C86F16500B77F4F /* RideAnctionView.swift */,
+				BF0A15812C9311EE00B77F4F /* MenuHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,7 +280,10 @@
 				BF6239C22C75CB1700F661EF /* AppDelegate.swift in Sources */,
 				BF0A15762C86F16500B77F4F /* RideAnctionView.swift in Sources */,
 				BF6239DD2C75CC9800F661EF /* LoginController.swift in Sources */,
+				BF0A157E2C92FEA600B77F4F /* MenuController.swift in Sources */,
 				BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */,
+				BF0A15802C92FEC200B77F4F /* ContainerController.swift in Sources */,
+				BF0A15822C9311EE00B77F4F /* MenuHeader.swift in Sources */,
 				BF0A15722C805CF800B77F4F /* LocationHandler.swift in Sources */,
 				BF6239C42C75CB1700F661EF /* SceneDelegate.swift in Sources */,
 				BF6239FA2C7F26A200F661EF /* User.swift in Sources */,
