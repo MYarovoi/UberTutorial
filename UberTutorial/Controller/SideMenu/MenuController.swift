@@ -9,24 +9,45 @@ import UIKit
 
 private let reuseIdentifier = "MenuCell"
 
+private enum menuoptions: Int, CaseIterable, CustomStringConvertible {
+    case yourTrips
+    case settings
+    case logout
+    
+    var description: String {
+        switch self {
+        case .yourTrips:
+            return "Your Trips"
+        case .settings:
+            return "Settings"
+        case .logout:
+            return "Log Out"
+        }
+    }
+}
+
 class MenuController: UITableViewController {
     
     //MARK: - Properties
     
-    var user: User? {
-        didSet {
-            guard let user = user else { return }
-            menuHeader.user = user
-        }
-    }
+    private let user: User
     
     private lazy var menuHeader: MenuHeader = {
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 140)
-        let view = MenuHeader(frame: frame)
+        let view = MenuHeader(user: user, frame: frame)
         return view
     }()
     
     //MARK: - Lifecycle
+    
+    init(user: User) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +71,14 @@ class MenuController: UITableViewController {
 
 extension MenuController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return menuoptions.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = "Options"
+        
+        guard let option = menuoptions(rawValue: indexPath.row) else { return UITableViewCell()}
+        cell.textLabel?.text = option.description
         return cell
     }
 }
