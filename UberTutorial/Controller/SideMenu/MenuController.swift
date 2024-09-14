@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "MenuCell"
 
-private enum menuoptions: Int, CaseIterable, CustomStringConvertible {
+enum menuOptions: Int, CaseIterable, CustomStringConvertible {
     case yourTrips
     case settings
     case logout
@@ -26,11 +26,16 @@ private enum menuoptions: Int, CaseIterable, CustomStringConvertible {
     }
 }
 
+protocol MenuControllerDelegate: AnyObject {
+    func didSelect(option: menuOptions)
+}
+
 class MenuController: UITableViewController {
     
     //MARK: - Properties
     
     private let user: User
+    weak var delegate: MenuControllerDelegate?
     
     private lazy var menuHeader: MenuHeader = {
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 140)
@@ -69,16 +74,23 @@ class MenuController: UITableViewController {
     }
 }
 
+//MARK: - UITableView Delegate/Datasource
+
 extension MenuController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuoptions.allCases.count
+        return menuOptions.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-        guard let option = menuoptions(rawValue: indexPath.row) else { return UITableViewCell()}
+        guard let option = menuOptions(rawValue: indexPath.row) else { return UITableViewCell()}
         cell.textLabel?.text = option.description
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let option = menuOptions(rawValue: indexPath.row) else { return }
+        delegate?.didSelect(option: option)
     }
 }
