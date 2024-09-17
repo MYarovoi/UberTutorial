@@ -47,6 +47,7 @@ class MenuController: UITableViewController {
     
     init(user: User) {
         self.user = user
+        print(user)
         super.init(nibName: nil, bundle: nil)
     }
     

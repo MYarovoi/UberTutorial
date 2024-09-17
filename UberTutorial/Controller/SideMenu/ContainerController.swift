@@ -28,14 +28,24 @@ class ContainerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        configureHomeController()
-        fetchUserData()
+        checkIfUserIsLoggedIn()
     }
     
     //MARK: - Selectors
     
     //MARK: - API
+    
+    func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser?.uid == nil {
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
+            }
+        } else {
+            configure()
+        }
+    }
     
     func fetchUserData() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
@@ -45,21 +55,39 @@ class ContainerController: UIViewController {
     }
     
     func signOut() {
-        
         do {
             try Auth.auth().signOut()
-            
-            DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: LoginController())
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true)
-            }
+            removeAllViewsFromContainer()
+            presentLoginController()
         } catch {
-            debugPrint("Error signing out")
+            print("DEBUG: Error signing out")
         }
     }
     
     //MARK: - Helper Functions
+    
+    func removeAllViewsFromContainer() {
+        for subview in view.subviews {
+            subview.removeFromSuperview()
+        }
+    }
+    
+    func presentLoginController() {
+        DispatchQueue.main.async {
+            let nav = UINavigationController(rootViewController: LoginController())
+            if #available(iOS 13.0, *) {
+                nav.isModalInPresentation = true
+            }
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
+    
+    func configure() {
+        view.backgroundColor = .black
+        configureHomeController()
+        fetchUserData()
+    }
     
     func configureHomeController() {
         addChild(homeController)

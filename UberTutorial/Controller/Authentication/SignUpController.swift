@@ -140,7 +140,7 @@ class SignUpController: UIViewController {
         REF_USERS.child(uid).updateChildValues(values) { error, reference in
             guard let controller = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let window = controller.windows.first(where: { $0.isKeyWindow }),
-                  let controller = window.rootViewController as? HomeController else {
+                  let controller = window.rootViewController as? ContainerController else {
                 return
             }
             controller.configure()

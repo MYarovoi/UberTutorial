@@ -86,7 +86,7 @@ class LoginController: UIViewController {
             
             guard let controller = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let window = controller.windows.first(where: { $0.isKeyWindow }),
-                  let controller = window.rootViewController as? HomeController else {
+                  let controller = window.rootViewController as? ContainerController else {
                 return
             }
             controller.configure()
@@ -103,7 +103,6 @@ class LoginController: UIViewController {
     //MARK: - Helper Functions
     
     func configureUI() {
-        
         configureNavigationBar()
         
         view.backgroundColor = .backgroundColor
@@ -126,7 +125,6 @@ class LoginController: UIViewController {
     }
     
     func configureNavigationBar() {
-        
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
     }
