@@ -36,6 +36,8 @@
 		BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F52C7F08F200F661EF /* LocationCell.swift */; };
 		BF6239F82C7F1D6500F661EF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F72C7F1D6500F661EF /* Service.swift */; };
 		BF6239FA2C7F26A200F661EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F92C7F26A200F661EF /* User.swift */; };
+		BFA44EDE2C9AD6CC00130911 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */; };
+		BFA44EE02C9ADDE000130911 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44EDF2C9ADDE000130911 /* UserInfoHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		BF6239F52C7F08F200F661EF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BF6239F72C7F1D6500F661EF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		BF6239F92C7F26A200F661EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		BFA44EDF2C9ADDE000130911 /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				BF0A157B2C92FE5700B77F4F /* Authentication */,
 				BF6239EF2C7DB8C700F661EF /* HomeController.swift */,
 				BF0A15792C88A6DC00B77F4F /* PickupController.swift */,
+				BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				BF6239F32C7E0A2500F661EF /* LocationInputView.swift */,
 				BF0A15752C86F16500B77F4F /* RideAnctionView.swift */,
 				BF0A15812C9311EE00B77F4F /* MenuHeader.swift */,
+				BFA44EDF2C9ADDE000130911 /* UserInfoHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				BF6239E12C7638FD00F661EF /* SignUpController.swift in Sources */,
 				BF6239E32C778CD200F661EF /* AuthButton.swift in Sources */,
 				BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */,
+				BFA44EE02C9ADDE000130911 /* UserInfoHeader.swift in Sources */,
+				BFA44EDE2C9AD6CC00130911 /* SettingsController.swift in Sources */,
 				BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */,
 				BF0A15782C88861400B77F4F /* Trip.swift in Sources */,
 				BF0A157A2C88A6DC00B77F4F /* PickupController.swift in Sources */,

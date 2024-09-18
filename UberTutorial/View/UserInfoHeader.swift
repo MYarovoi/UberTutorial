@@ -1,13 +1,13 @@
 //
-//  MenuHeader.swift
+//  UserInfoHeader.swift
 //  UberTutorial
 //
-//  Created by Mykyta Yarovoi on 12.09.2024.
+//  Created by Mykyta Yarovoi on 18.09.2024.
 //
 
 import UIKit
 
-class MenuHeader: UIView {
+class UserInfoHeader: UIView {
     
     //MARK: - Properties
     
@@ -22,7 +22,6 @@ class MenuHeader: UIView {
     private lazy var fullnameLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
         label.text = user.fullname
         return label
     }()
@@ -41,11 +40,10 @@ class MenuHeader: UIView {
         self.user = user
         super.init(frame: frame)
         
-        backgroundColor = .black
+        backgroundColor = .white
         
         addSubview(profileImageView)
-        profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
-        profileImageView.setDimensions(height: 64, width: 64)
+        profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 12, width: 64, height: 64)
         profileImageView.layer.cornerRadius = 64 / 2
         
         let stak = UIStackView(arrangedSubviews: [fullnameLabel, emailLabel])
@@ -59,5 +57,4 @@ class MenuHeader: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK: - Selectors
 }
