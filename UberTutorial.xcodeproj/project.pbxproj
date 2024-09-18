@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,6 @@
 		BF6239F62C7F08F200F661EF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F52C7F08F200F661EF /* LocationCell.swift */; };
 		BF6239F82C7F1D6500F661EF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F72C7F1D6500F661EF /* Service.swift */; };
 		BF6239FA2C7F26A200F661EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6239F92C7F26A200F661EF /* User.swift */; };
-		BFA44EDE2C9AD6CC00130911 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */; };
 		BFA44EE02C9ADDE000130911 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44EDF2C9ADDE000130911 /* UserInfoHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +66,12 @@
 		BF6239F52C7F08F200F661EF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BF6239F72C7F1D6500F661EF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		BF6239F92C7F26A200F661EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BFA44EDF2C9ADDE000130911 /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BFA44EE12C9AF4A500130911 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF6239BB2C75CB1700F661EF /* Frameworks */ = {
@@ -143,11 +145,11 @@
 		BF6239D52C75CB6200F661EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFA44EE12C9AF4A500130911 /* Settings */,
 				BF0A157C2C92FE7500B77F4F /* SideMenu */,
 				BF0A157B2C92FE5700B77F4F /* Authentication */,
 				BF6239EF2C7DB8C700F661EF /* HomeController.swift */,
 				BF0A15792C88A6DC00B77F4F /* PickupController.swift */,
-				BFA44EDD2C9AD6CC00130911 /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +209,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BFA44EE12C9AF4A500130911 /* Settings */,
 			);
 			name = UberTutorial;
 			packageProductDependencies = (
@@ -280,7 +285,6 @@
 				BF6239E32C778CD200F661EF /* AuthButton.swift in Sources */,
 				BF6239F02C7DB8C700F661EF /* HomeController.swift in Sources */,
 				BFA44EE02C9ADDE000130911 /* UserInfoHeader.swift in Sources */,
-				BFA44EDE2C9AD6CC00130911 /* SettingsController.swift in Sources */,
 				BF6239F42C7E0A2500F661EF /* LocationInputView.swift in Sources */,
 				BF0A15782C88861400B77F4F /* Trip.swift in Sources */,
 				BF0A157A2C88A6DC00B77F4F /* PickupController.swift in Sources */,
