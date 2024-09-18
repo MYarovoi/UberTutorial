@@ -16,9 +16,14 @@ class AddLocationController: UITableViewController {
     
     private let searchBar = UISearchBar()
     private let searchComplete = MKLocalSearchCompleter()
-    private var searchResults = [MKLocalSearchCompletion]()
+    private var searchResults = [MKLocalSearchCompletion]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     private let type: LocationType
     private let location: CLLocation
+    private let searchCompleter = MKLocalSearchCompleter()
     
     //MARK: - Lyfecycle
     
@@ -60,7 +65,6 @@ class AddLocationController: UITableViewController {
     func configureSearchCompleter() {
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         
-        let searchCompleter = MKLocalSearchCompleter()
         searchCompleter.region = region
         searchCompleter.delegate = self
     }
@@ -75,6 +79,9 @@ extension AddLocationController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        let result = searchResults[indexPath.row]
+        cell.textLabel?.text = result.title
+        cell.detailTextLabel?.text = result.subtitle
         return cell
     }
 }
@@ -82,9 +89,13 @@ extension AddLocationController {
 //MARK: - UISearchBarDelegate
 
 extension AddLocationController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchCompleter.queryFragment = searchText
+    }
 }
 
 extension AddLocationController: MKLocalSearchCompleterDelegate {
-    
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        searchResults = completer.results
+    }
 }
