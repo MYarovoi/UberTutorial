@@ -182,6 +182,7 @@ extension ContainerController: MenuControllerDelegate {
                 let controller = SettingsController(user: user)
                 let nav = UINavigationController(rootViewController: controller)
                 nav.modalPresentationStyle = .fullScreen
+                nav.view.backgroundColor = .black
                 self.present(nav, animated: true)
             case .logout:
                 let alert = UIAlertController(title: nil, message: "Are you sure you want to log out?", preferredStyle: .actionSheet)

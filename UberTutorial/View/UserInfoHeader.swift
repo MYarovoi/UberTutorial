@@ -43,7 +43,8 @@ class UserInfoHeader: UIView {
         backgroundColor = .white
         
         addSubview(profileImageView)
-        profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 12, width: 64, height: 64)
+        profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
+        profileImageView.setDimensions(height: 64, width: 64)
         profileImageView.layer.cornerRadius = 64 / 2
         
         let stak = UIStackView(arrangedSubviews: [fullnameLabel, emailLabel])
