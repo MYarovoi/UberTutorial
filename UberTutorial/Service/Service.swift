@@ -103,6 +103,12 @@ struct PassengerService {
         guard let uId = Auth.auth().currentUser?.uid else { return }
         REF_TRIPS.child(uId).removeValue(completionBlock: completion)
     }
+    
+    func saveLocation(locationString: String, type: LocationType, comletion: @escaping(Error?, DatabaseReference) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let key: String = type == .home ? "homeLocation" : "workLocation"
+        REF_USERS.child(uid).child(key).setValue(locationString, withCompletionBlock: comletion)
+    }
 }
 
 //MARK: - Shared Service
