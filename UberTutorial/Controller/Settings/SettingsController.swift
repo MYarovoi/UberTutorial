@@ -32,12 +32,18 @@ enum LocationType: Int, CaseIterable, CustomStringConvertible {
     case work
 }
 
+protocol SettingsControllerDelegate: AnyObject {
+    func updateUser(_ controller: SettingsController)
+}
+
 class SettingsController: UITableViewController {
     
     //MARK: - Properties
     
-    private var user: User
+    var user: User
     private let locationManager = LocationHandler.shared.locationManager
+    weak var delegate: SettingsControllerDelegate?
+    var userInfoUpdateed = false
     
     private lazy var infoheader: UserInfoHeader = {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
@@ -65,6 +71,10 @@ class SettingsController: UITableViewController {
     //MARK: - Selectors
     
     @objc func handleDismissal() {
+        if userInfoUpdateed {
+            delegate?.updateUser(self)
+        }
+        
         self.dismiss(animated: true)
     }
     
@@ -146,6 +156,7 @@ extension SettingsController: AddLocationControllerDelegate {
     func updateLocation(locationString: String, type: LocationType) {
         PassengerService.shared.saveLocation(locationString: locationString, type: type) { err, ref in
             self.dismiss(animated: true)
+            self.userInfoUpdateed = true
             
             switch type {
             case .home:
